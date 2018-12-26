@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<style>
+    .even {
+        background-color: pink;
+    }
+</style>
+<body>
+    <form>
+        <label for="item">Enter Item:</label>
+        <input type="text" name="item" id="item" /><br />
+        <input type="button" value="Add" onclick="add();" />
+        <input type="button" value="Remove Last" onclick="remove();" />
+    </form>
+</body>
+<ul id="append_text"></ul>
+<script>
+var count=0;
+function add() {
+ count= count+1;
+if(count%2==0){
+$("#append_text").append("<li class='even'>"+$("#item").val()+"</li>");
+}else{
+$("#append_text").append("<li>"+$("#item").val()+"</li>");
+}
+}
+function remove() {
+$("#append_text li:last-child").remove();
+count= count -1;
+
+}</script>
+</html> 
